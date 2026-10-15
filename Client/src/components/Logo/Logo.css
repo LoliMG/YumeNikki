@@ -1,0 +1,52 @@
+/* Logo.css - Logotipo SVG estilizado con nesting */
+
+.yume-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  user-select: none;
+
+  .yume-logo-svg {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .yume-logo-text {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--nikki-text);
+    line-height: 1;
+  }
+
+  &.yume-logo-sm {
+    .yume-logo-svg {
+      width: 28px;
+      height: 28px;
+    }
+    .yume-logo-text {
+      font-size: 1.25rem;
+    }
+  }
+
+  &.yume-logo-md {
+    .yume-logo-svg {
+      width: 36px;
+      height: 36px;
+    }
+    .yume-logo-text {
+      font-size: 1.55rem;
+    }
+  }
+
+  &.yume-logo-lg {
+    .yume-logo-svg {
+      width: 48px;
+      height: 48px;
+    }
+    .yume-logo-text {
+      font-size: 2.1rem;
+    }
+  }
+}

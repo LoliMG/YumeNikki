@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: yume_nikki_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: yume_nikki
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+    ports:
+      - "5434:5432"
+    volumes:
+      - yume_nikki_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d yume_nikki"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  yume_nikki_pgdata:
+    driver: local

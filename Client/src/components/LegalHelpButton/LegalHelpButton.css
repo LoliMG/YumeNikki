@@ -1,0 +1,95 @@
+/* LegalHelpButton.css */
+
+.legal-help-floating-container {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legal-help-floating-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(30, 25, 65, 0.85);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  color: #c4b5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  outline: none;
+
+  &:hover {
+    background: rgba(45, 38, 95, 0.95);
+    border-color: rgba(167, 139, 250, 0.7);
+    color: #ffffff;
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(167, 139, 250, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0) scale(0.96);
+  }
+
+  .legal-help-icon {
+    transition: transform 0.2s ease;
+  }
+
+  &:hover .legal-help-icon {
+    transform: rotate(12deg);
+  }
+}
+
+.legal-help-floating-tooltip {
+  position: absolute;
+  right: 54px;
+  white-space: nowrap;
+  background: rgba(14, 12, 31, 0.95);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  color: #f3f0ff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  animation: legalTooltipFade 0.2s ease forwards;
+}
+
+@keyframes legalTooltipFade {
+  from {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .legal-help-floating-container {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .legal-help-floating-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media print {
+  .legal-help-floating-container {
+    display: none !important;
+  }
+}

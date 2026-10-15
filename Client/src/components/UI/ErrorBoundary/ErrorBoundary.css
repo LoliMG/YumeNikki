@@ -1,0 +1,19 @@
+.error-boundary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+  text-align: center;
+  padding: 32px;
+
+  h2 {
+    font-family: var(--font-serif);
+    color: var(--nikki-text);
+  }
+
+  p {
+    color: var(--nikki-text-muted);
+  }
+}

@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+Client/node_modules/
+Server/node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*
+Client/.env
+Server/.env
+
+# Uploads and temporary media
+Server/public/uploads/*
+!Server/public/uploads/.gitkeep
+
+# Build output
+Client/dist/
+Client/build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+*.suo
+
+# Personal / Private docs & data dumps
+*.pdf
+docs/*.pdf
+*extracted*
+*suenos*
+Server/database/*.txt
+

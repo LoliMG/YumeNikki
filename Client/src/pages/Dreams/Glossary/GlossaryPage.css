@@ -1,0 +1,70 @@
+/* GlossaryPage.css */
+
+/* Pestañas de Glosario (Símbolos y Etiquetas) con la paleta dorada y cósmica del perfil */
+.profile-custom-tabs, 
+.profile-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  gap: 0.35rem;
+}
+
+.profile-custom-tabs .nav-link,
+.profile-tabs .nav-link {
+  color: var(--nikki-text-muted, #a39dc9) !important;
+  font-weight: 500;
+  border: none !important;
+  border-bottom: 2.5px solid transparent !important;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px 8px 0 0;
+  background: transparent !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-custom-tabs .nav-link:hover,
+.profile-tabs .nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.profile-custom-tabs .nav-link.active,
+.profile-tabs .nav-link.active {
+  color: var(--nikki-accent, #e8c987) !important;
+  background: rgba(232, 201, 135, 0.08) !important;
+  border-bottom: 2.5px solid var(--nikki-accent, #e8c987) !important;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(232, 201, 135, 0.06);
+}
+
+.symbol-card {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  background: rgba(24, 20, 52, 0.65) !important;
+  border: 1px solid rgba(167, 139, 250, 0.16) !important;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(167, 139, 250, 0.35) !important;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.12);
+  }
+}
+
+.symbol-icon-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(232, 201, 135, 0.15);
+  color: #e8c987;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(232, 201, 135, 0.25);
+  flex-shrink: 0;
+}
+
+.symbol-meaning {
+  line-height: 1.55;
+  color: #c4b5fd !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

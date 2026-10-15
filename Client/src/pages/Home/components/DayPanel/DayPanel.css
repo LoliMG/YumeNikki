@@ -1,0 +1,56 @@
+/* DayPanel.css - Panel lateral de sueños y notas de la fecha seleccionada */
+
+.day-panel-card {
+  background-color: var(--nikki-surface);
+
+  .day-panel-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    color: var(--nikki-text);
+  }
+
+  .day-panel-dream-item {
+    background-color: rgba(33, 29, 63, 0.65);
+    border: 1px solid var(--nikki-border);
+    border-radius: 10px;
+    padding: 0.75rem 0.95rem;
+    transition: all 0.18s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(167, 139, 250, 0.12);
+      border-color: rgba(167, 139, 250, 0.45);
+      transform: translateX(3px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .day-panel-dream-item-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--nikki-accent);
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  /* Notas diurnas con borde distintivo y resalte */
+  .day-panel-note-item {
+    background: rgba(33, 29, 63, 0.65);
+    border: 1px solid var(--nikki-border);
+    border-left: 3.5px solid var(--nikki-accent);
+    border-radius: 10px;
+    padding: 0.75rem 0.95rem;
+    transition: all 0.18s ease-in-out;
+
+    &:hover {
+      background: rgba(43, 38, 82, 0.85);
+      border-color: rgba(232, 201, 135, 0.5);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .day-panel-note-text {
+      color: var(--nikki-text);
+      font-size: 0.88rem;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+}

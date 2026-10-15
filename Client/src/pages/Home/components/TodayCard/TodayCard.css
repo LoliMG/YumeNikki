@@ -1,0 +1,18 @@
+/* TodayCard.css - Tarjeta de la noche actual */
+
+.today-card {
+  background: linear-gradient(135deg, rgba(24, 20, 52, 0.95) 0%, rgba(37, 32, 77, 0.9) 100%);
+  border: 1px solid var(--nikki-border) !important;
+  box-shadow: inset 4px 0 0 var(--nikki-accent), 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+
+  .today-moon-emoji {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .today-zodiac-symbol {
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--nikki-accent);
+  }
+}

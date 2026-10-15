@@ -1,0 +1,97 @@
+/* Navbar.css - Barra de navegación con nesting */
+
+.yume-navbar-wrapper {
+  height: 64px;
+  background-color: rgba(13, 11, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nikki-border);
+  z-index: 1020;
+
+  .yume-nav-link {
+    color: var(--nikki-text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: var(--bs-border-radius);
+    transition: color 0.15s ease, background-color 0.15s ease;
+    min-height: 40px;
+    min-width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--nikki-text);
+      background-color: var(--nikki-surface-2);
+      outline: none;
+    }
+
+    &.active {
+      color: var(--nikki-accent);
+      background-color: rgba(232, 201, 135, 0.1);
+    }
+  }
+
+  .btn-register-dream {
+    background-color: var(--nikki-accent);
+    border-color: var(--nikki-accent);
+    color: #0d0b1e;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    min-height: 38px;
+    min-width: 38px;
+
+    &:hover {
+      background-color: #f0d8a4;
+      border-color: #f0d8a4;
+      color: #0d0b1e;
+      transform: translateY(-1px);
+      box-shadow: 0 0 15px rgba(232, 201, 135, 0.35);
+    }
+  }
+
+  .navbar-create-dropdown {
+    background: rgba(18, 14, 38, 0.96);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(167, 139, 250, 0.28) !important;
+    min-width: 175px;
+    z-index: 1050;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.55), 0 0 15px rgba(167, 139, 250, 0.12);
+  }
+
+  .navbar-create-item {
+    background: transparent;
+    border: none;
+    color: #f1edff;
+    transition: all 0.15s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(167, 139, 250, 0.16) !important;
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+  }
+
+  .btn-nav-icon {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--nikki-text-muted);
+    border-radius: var(--bs-border-radius);
+    padding: 8px;
+    min-height: 40px;
+    min-width: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease, background-color 0.15s ease;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--nikki-text);
+      background-color: var(--nikki-surface-2);
+      outline: none;
+    }
+  }
+}

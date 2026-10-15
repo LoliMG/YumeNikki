@@ -1,0 +1,369 @@
+// ============================================================================
+// TEMA SASS UNIFICADO: YUME NIKKI (Configuración nativa de Bootstrap 5.3)
+// ============================================================================
+
+// 1. Paleta mística con alto contraste entre zonas interactivas y fondo
+$nikki-bg: #090716;          // Fondo base profundo
+$nikki-surface: #181434;     // Fondo de tarjetas y paneles
+$nikki-surface-2: #25204d;   // Contenedores interactivos internos
+$nikki-border: #3e3776;      // Bordes definidos y visibles
+$nikki-text: #f1edff;        // Texto principal legible
+$nikki-text-muted: #a39dc9;  // Texto secundario contrastado
+$nikki-accent: #e8c987;      // Oro estelar
+$nikki-accent-2: #a78bfa;    // Lavanda onírica
+
+// 2. Tipografías
+$font-family-sans-serif: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+$headings-font-family: $font-family-serif;
+$headings-font-weight: 600;
+$headings-color: $nikki-text;
+
+// 3. Colores semánticos de Bootstrap y mapa de temas (antes del import)
+$primary: $nikki-accent-2;
+$secondary: #2b2559;
+$success: #34d399;
+$info: #38bdf8;
+$warning: $nikki-accent;
+$danger: #7d3442;
+$light: $nikki-text;
+$dark: $nikki-bg;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark
+);
+
+// 4. Fondos y textos globales (Dark Mode por defecto)
+$body-bg: $nikki-bg;
+$body-color: $nikki-text;
+$body-secondary-bg: $nikki-surface;
+$body-tertiary-bg: $nikki-surface-2;
+$body-secondary-color: $nikki-text-muted;
+
+// 5. Bordes y radios
+$border-color: $nikki-border;
+$border-color-translucent: rgba(62, 55, 118, 0.85);
+$border-radius: 0.625rem;
+$border-radius-sm: 0.375rem;
+$border-radius-lg: 0.875rem;
+$border-radius-xl: 1.125rem;
+
+// 6. Tarjetas
+$card-bg: $nikki-surface;
+$card-color: $nikki-text;
+$card-border-color: $nikki-border;
+$card-cap-bg: $nikki-surface-2;
+$card-border-radius: $border-radius-lg;
+
+// 7. Formularios
+$input-bg: #120f28;
+$input-disabled-bg: #0d0a1d;
+$input-color: $nikki-text;
+$input-border-color: #433b7e;
+$input-placeholder-color: $nikki-text-muted;
+$input-focus-bg: #171333;
+$input-focus-border-color: $nikki-accent-2;
+$input-focus-color: #ffffff;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba(167, 139, 250, 0.28);
+$form-select-bg: #120f28;
+$form-select-color: $nikki-text;
+$form-select-border-color: #433b7e;
+$form-select-indicator-color: $nikki-text-muted;
+
+// 8. Modales
+$modal-content-bg: $nikki-surface;
+$modal-content-color: $nikki-text;
+$modal-content-border-color: $nikki-border;
+$modal-header-border-color: $nikki-border;
+$modal-footer-border-color: $nikki-border;
+$modal-backdrop-bg: #000;
+$modal-backdrop-opacity: 0.8;
+
+// 9. Dropdowns y Tooltips
+$dropdown-bg: $nikki-surface;
+$dropdown-border-color: $nikki-border;
+$dropdown-color: $nikki-text;
+$dropdown-link-color: $nikki-text;
+$dropdown-link-hover-bg: $nikki-surface-2;
+$dropdown-link-hover-color: $nikki-text;
+$tooltip-bg: $nikki-surface-2;
+$tooltip-color: $nikki-text;
+$tooltip-border-radius: $border-radius-sm;
+
+// 10. Navbars
+$navbar-dark-color: $nikki-text-muted;
+$navbar-dark-hover-color: $nikki-text;
+$navbar-dark-active-color: $nikki-accent;
+
+// 11. Importación oficial de Bootstrap con variables asimiladas
+@import "bootstrap/scss/bootstrap";
+
+// 12. Variables CSS expuestas para componentes personalizados
+:root {
+  --nikki-bg: #{$nikki-bg};
+  --nikki-surface: #{$nikki-surface};
+  --nikki-surface-2: #{$nikki-surface-2};
+  --nikki-border: #{$nikki-border};
+  --nikki-text: #{$nikki-text};
+  --nikki-text-muted: #{$nikki-text-muted};
+  --nikki-accent: #{$nikki-accent};
+  --nikki-accent-2: #{$nikki-accent-2};
+  --font-serif: #{$font-family-serif};
+  --font-sans: #{$font-family-sans-serif};
+  color-scheme: dark;
+}
+
+// 13. Lienzo base global
+html {
+  background-color: #020409;
+}
+
+body {
+  background-color: transparent;
+  min-height: 100vh;
+}
+
+// 14. Clases de utilidad de superficie y bordes
+.bg-surface {
+  background-color: var(--nikki-surface);
+}
+
+.bg-surface-2 {
+  background-color: var(--nikki-surface-2);
+}
+
+.border-subtle {
+  border-color: rgba(167, 139, 250, 0.22);
+}
+
+.card {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+// 15. Botones interactivos estilizados mediante cascada
+.btn-secondary {
+  border: 1px solid #544a99;
+  color: #ece7ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.16s ease-in-out;
+
+  &:hover, &:focus-visible {
+    background-color: #383074;
+    border-color: #a78bfa;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(167, 139, 250, 0.35);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-primary {
+  box-shadow: 0 2px 8px rgba(167, 139, 250, 0.25);
+  font-weight: 600;
+
+  &:hover, &:focus-visible {
+    box-shadow: 0 0 16px rgba(167, 139, 250, 0.45);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-outline-secondary {
+  border-color: #544a99;
+  color: #c4b5fd;
+
+  &:hover, &:focus-visible {
+    background-color: #2b2559;
+    border-color: #a78bfa;
+    color: #ffffff;
+  }
+}
+
+.btn-danger {
+  border-color: #964050;
+  color: #fae1e5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.16s ease-in-out;
+
+  &:hover, &:focus-visible {
+    background-color: #943d4d;
+    border-color: #ad4a5c;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(165, 65, 83, 0.35);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    background-color: #6a2a35;
+    border-color: #7d3442;
+    transform: translateY(0);
+  }
+
+  &:disabled, &.disabled {
+    background-color: #482128;
+    border-color: #55272f;
+    color: #926d73;
+    opacity: 0.65;
+  }
+}
+
+.btn-outline-danger {
+  background-color: transparent;
+  border-color: #964050;
+  color: #f0a8b4;
+
+  &:hover, &:focus-visible {
+    background-color: #7d3442;
+    border-color: #ad4a5c;
+    color: #ffffff;
+  }
+}
+
+// 16. Inputs y selectores
+.form-control, .form-select, select {
+  color-scheme: dark;
+  border-radius: 0.625rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.18s ease-in-out, box-shadow 0.18s ease-in-out, background-color 0.18s ease-in-out;
+
+  &:hover {
+    border-color: #6358aa;
+    background-color: #161230;
+  }
+
+  &:focus {
+    border-color: #a78bfa;
+    background-color: #171333;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(167, 139, 250, 0.28);
+    outline: none;
+  }
+
+  &:disabled, &[readonly] {
+    background-color: #0d0a1d;
+    border-color: #2b2552;
+    color: #7b759f;
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.form-select, select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a78bfa' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 14px 10px;
+  padding-right: 2.35rem;
+  cursor: pointer;
+
+  option, optgroup {
+    background-color: #171334;
+    color: #f1edff;
+    padding: 10px 14px;
+    border: none;
+  }
+
+  option:checked {
+    background-color: #4338ca;
+    color: #ffffff;
+  }
+
+  option:hover {
+    background-color: #2b2353;
+  }
+}
+
+// 17. Controles de fecha y hora nativos
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="time"] {
+  color-scheme: dark;
+  cursor: pointer;
+
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 4px;
+    margin-right: 2px;
+    filter: invert(0.85) sepia(0.3) saturate(2) hue-rotate(220deg) brightness(1.2);
+    opacity: 0.85;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.18);
+      filter: invert(0.95) drop-shadow(0 0 6px rgba(167, 139, 250, 0.85));
+    }
+  }
+
+  &::-webkit-datetime-edit-fields-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-datetime-edit-text {
+    color: #a78bfa;
+    padding: 0 0.15rem;
+  }
+
+  &::-webkit-datetime-edit-month-field,
+  &::-webkit-datetime-edit-day-field,
+  &::-webkit-datetime-edit-year-field {
+    color: #f1edff;
+    padding: 0.1rem 0.15rem;
+    border-radius: 3px;
+
+    &:focus {
+      background-color: #4338ca;
+      color: #ffffff;
+      outline: none;
+    }
+  }
+}
+
+// 18. Filas de etiquetas en perfil
+.profile-tag-row {
+  background-color: rgba(33, 29, 63, 0.65);
+  border: 1px solid var(--nikki-border);
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background-color: rgba(43, 38, 82, 0.85);
+    border-color: rgba(167, 139, 250, 0.4);
+  }
+}
+
+// 19. Pestañas (Tabs)
+.nav-tabs, .profile-tabs, .profile-custom-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 0.35rem;
+
+  .nav-link {
+    color: var(--nikki-text-muted, #a39dc9);
+    font-weight: 500;
+    border: none;
+    border-bottom: 2.5px solid transparent;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px 8px 0 0;
+    background: transparent;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      color: var(--nikki-accent, #e8c987);
+      background: rgba(232, 201, 135, 0.08);
+      border-bottom: 2.5px solid var(--nikki-accent, #e8c987);
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(232, 201, 135, 0.06);
+    }
+  }
+}

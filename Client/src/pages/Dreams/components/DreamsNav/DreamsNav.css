@@ -1,0 +1,53 @@
+/* DreamsNav.css */
+
+.dreams-subnav-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+  padding-bottom: 0.2rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.dreams-subnav-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dreams-subnav-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1rem;
+  border-radius: 0.65rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted, #9d9bb8);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  &:hover {
+    color: #fff;
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.15);
+  }
+
+  &.active {
+    color: #fff;
+    background: rgba(37, 32, 77, 0.75);
+    border-color: rgba(167, 139, 250, 0.35);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+    font-weight: 600;
+
+    svg {
+      color: #e8c987;
+    }
+  }
+}

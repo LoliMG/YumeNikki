@@ -1,0 +1,151 @@
+/* CalendarView.css - Vista de calendario mensual y semanal */
+
+.calendar-card {
+  background-color: var(--nikki-surface);
+
+  .calendar-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 700;
+    color: var(--nikki-accent);
+    letter-spacing: 0.5px;
+  }
+
+  .calendar-header-title-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: opacity 0.16s ease, transform 0.16s ease;
+
+    &:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--nikki-accent-2);
+      outline-offset: 4px;
+    }
+  }
+
+  .calendar-grid-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    gap: 4px;
+
+    .calendar-weekday-title {
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+
+    .calendar-day-cell {
+      position: relative;
+      min-height: 72px;
+      padding: 0.45rem;
+      border-radius: 10px;
+      background-color: rgba(33, 29, 63, 0.55);
+      border: 1px solid rgba(167, 139, 250, 0.2);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.16s ease-in-out;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background-color: rgba(167, 139, 250, 0.16);
+        border-color: rgba(167, 139, 250, 0.5);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      &.calendar-day-outside {
+        opacity: 0.35;
+      }
+
+      &.calendar-day-today {
+        border-color: var(--nikki-accent-2);
+        background-color: rgba(167, 139, 250, 0.06);
+      }
+
+      &.calendar-day-selected {
+        border-color: var(--nikki-accent) !important;
+        box-shadow: 0 0 0 1px var(--nikki-accent), 0 0 12px rgba(232, 201, 135, 0.2);
+        background-color: rgba(232, 201, 135, 0.08) !important;
+      }
+
+      .calendar-day-number {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--nikki-text);
+        line-height: 1;
+      }
+
+      .calendar-day-moon {
+        font-size: 0.95rem;
+        line-height: 1;
+      }
+
+      .calendar-day-indicators {
+        min-height: 16px;
+
+        .calendar-dream-dots {
+          display: flex;
+          gap: 3px;
+          align-items: center;
+
+          .calendar-color-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+          }
+
+          .calendar-color-dot-more {
+            font-size: 0.65rem;
+            color: var(--nikki-text-muted);
+            line-height: 1;
+            font-weight: 700;
+          }
+        }
+
+        .calendar-note-indicator {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .calendar-grid .calendar-day-cell {
+      min-height: 56px;
+      padding: 0.25rem;
+
+      .calendar-day-number {
+        font-size: 0.75rem;
+      }
+
+      .calendar-day-moon {
+        font-size: 0.8rem;
+      }
+
+      .calendar-day-indicators .calendar-dream-dots .calendar-color-dot {
+        width: 5px;
+        height: 5px;
+      }
+    }
+  }
+}
